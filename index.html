@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Miraki Digital Marketing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #8b6262;
+            color: #333;
+            line-height: 1.1;
+        }
+        .services-images {
+    padding: 80px 40px;
+    background: #3b5875;
+    text-align: center;
+}
+.robot-section {
+    min-height: 30vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background: linear-gradient(135deg, #0d0e11, #6589be, #658eaa);
+}
+
+.robot-section img {
+    width: 320px;
+    max-width: 50%;
+}
+
+
+
+.section-title h2 {
+    font-size: 32px;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #164e9c;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.service-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 20px;
+}
+
+.service-card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+        /* Stats Section */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.stat-box h2 {
+    color: #0f172a;
+    font-size: 36px;
+}
+
+.stat-box p {
+    color: #555;
+}
+.stat-box img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+/* Awards */
+.awards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.award-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.award-card img {
+    max-width: 90px;
+    margin-bottom: 12px;
+}
+
+.award-card p {
+    font-weight: 500;
+    color: #333;
+}
+
+
+/* Ratings */
+.ratings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.rating-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.stars {
+    color: #fbbf24;
+    font-size: 18px;
+}
+.client-love {
+    background: #eaf0f8;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.client-love h2 {
+    font-size: 30px;
+    color: #0f172a;
+    margin-bottom: 50px;
+}
+
+.testimonial-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+.stars {
+    color: #fbbf24;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.testimonial-card p {
+    color: #555;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.testimonial-card h4 {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #0f172a;
+}
+
+.testimonial-card span {
+    font-size: 14px;
+    color: #64748b;
+}
+
+
+
+        /* Header */
+        header {
+            background: #0f172a;
+            color: #fff;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #fff;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+        .hero {
+    background:
+        linear-gradient(
+            rgba(15, 23, 42, 0.85),
+            rgba(2, 6, 23, 0.9)
+        ),
+        url("robo-hand.png") center / cover no-repeat;
+        
+    color: #dfd2d2;
+    padding: 120px 60px;
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+     
+
+
+        /* Section */
+        section {
+            padding: 70px 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h3 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #634d4d;
+        }
+
+        /* Services */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #472c2c;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .service-card h4 {
+            margin-bottom: 15px;
+            color: #8ca4db;
+        }
+
+        /* About */
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        .about-text p {
+            color: #0f0202;
+        }
+        .our-clients { background: #f1ecec; padding: 80px 40px; text-align: center; } .section-title h2 { font-size: 32px; color: #7d92c2; margin-bottom: 10px; } .section-title p { color: #2e558b; font-size: 16px; margin-bottom: 50px; } .clients-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 40px; align-items: center; } .clients-grid img { max-width: 160px; margin: auto; filter: grayscale(0%); opacity: 0.8; transition: all 0.3s ease; }
+         .clients-grid img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05); }
+
+        /* Contact */
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            background: #080101;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 14px;
+            background: #29324d;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background: #020617;
+        }
+        /* Footer */
+.main-footer {
+    background: hsl(230, 84%, 33%);
+    color: #cbd5e1;
+    padding: 70px 60px 20px;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-brand h2 {
+    color: #fff;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.footer-brand span {
+    color: #d6dcdf;
+}
+
+.footer-brand p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.footer-email {
+    margin-top: 10px;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: 10px;
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #c6d9e0;
+}
+
+.footer-contact p {
+    margin-bottom: 14px;
+    line-height: 1.5;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    border-top: 1px solid rgba(206, 183, 183, 0.1);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-bottom a {
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: #628492;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-bottom {
+        text-align: center;
+        flex-direction: column;
+    }
+}
+
+    </style>
+   
+</head>
+<body>
+
+<header>
+    <h1>Miraki Digital</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+<div class="hero">
+    <div class="hero-content">
+        <h2>Grow Your Business Online</h2>
+        <p>
+            Miraki Digital Marketing helps brands grow with SEO,
+            social media marketing, paid ads, and creative strategies.
+        </p>
+        <button>Get Started</button>
+    </div>
+</div>
+<div class="robot-section">
+    <img src="Robot.gif" alt="AI Robot">
+</div>
+
+
+
+<section class="services-images">
+    <div class="section-title">
+        <h2>Our Digital Marketing Services</h2>
+        <p>Strategies that drive growth & results</p>
+    </div>
+
+    <div class="services-grid">
+
+        <div class="service-card">
+            <img src="brand strategy-1.jpeg" alt="Brand Strategy">
+            <div class="overlay">
+                <h3>Brand Strategy</h3>
+                <p>Build a strong and memorable brand identity</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="Industrial Paid Advertising.webp" alt="Paid Advertising">
+            <div class="overlay">
+                <h3>Paid Advertising</h3>
+                <p>High-ROI Google & Social Media Ads</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="SEO-marketing-company.jpg" alt="SEO Services">
+            <div class="overlay">
+                <h3>SEO Optimization</h3>
+                <p>Rank higher & increase organic traffic</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="types-of-social-media-marketing.png" alt="Social Media Marketing">
+            <div class="overlay">
+                <h3>Social Media Marketing</h3>
+                <p>Engage audiences across all platforms</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</section>
+
+<section>
+    <div class="about">
+        <div class="about-text">
+            <h3>About Miraki Digital</h3>
+            <p>
+                Miraki Digital Marketing is a results-oriented agency focused on helping
+                businesses scale through innovative digital strategies. Our team blends
+                creativity with data-driven marketing to deliver measurable success.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+   <section>
+    <div class="section-title">
+        <h3>Our Achievements</h3>
+    </div>
+
+    <div class="stats">
+
+        <div class="stat-box">
+            <img src="project.png" alt="Projects Done">
+            <h2>567+</h2>
+            <p>Projects Done</p>
+        </div>
+
+        <div class="stat-box">
+            <img src="ambition.png" alt="Success Rate">
+            <h2>100%</h2>
+            <p>Success Rate</p>
+        </div>
+
+        <div class="stat-box">
+            <img src="medal.png" alt="Awards">
+            <h2>10+</h2>
+            <p>Awards</p>
+        </div>
+
+        <div class="stat-box">
+            <img src="rating.png" alt="Active Clients">
+            <h2>200+</h2>
+            <p>Active Clients</p>
+        </div>
+
+    </div>
+</section>
+
+</section>
+
+
+    <section>
+    <div class="section-title">
+        <h3>Awards & Recognition</h3>
+        <p>Recognized by top platforms</p>
+    </div>
+
+
+    <div class="awards">
+        <div class="award-card">
+            <img src="silicon.png" alt="Silicon India">
+            <p>Silicon India</p>
+        </div>
+
+        <div class="award-card">
+            <img src="iso-9001.png" alt="T-Hub">
+            <p>T-Hub</p>
+        </div>
+
+        <div class="award-card">
+            <img src="iso-27001.png" alt="ISO 9001">
+            <p>ISO 9001</p>
+        </div>
+
+        <div class="award-card">
+            <img src="t-hub.png" alt="ISO 27001">
+            <p>ISO 27001</p>
+        </div>
+
+        <div class="award-card">
+            <img src="insight.png" alt="GoodFirms">
+            <p>GoodFirms</p>
+        </div>
+
+        <div class="award-card">
+            <img src="sulekha.png" alt="Sulekha">
+            <p>Sulekha</p>
+        </div>
+    </div>
+</section>
+
+</section>
+<section>
+    <div class="section-title">
+        <h3>We are Highly Rated by our Users</h3>
+    </div>
+
+    <div class="ratings">
+
+        <div class="rating-card">
+            <img src="facebook.png" alt="Facebook">
+            <h4>Facebook</h4>
+            <div class="stars">★★★★★</div>
+            <p>3.5 / 5</p>
+        </div>
+
+        <div class="rating-card">
+            <img src="glassdoor.png" alt="Glassdoor">
+            <h4>Glassdoor</h4>
+            <div class="stars">★★★★★</div>
+            <p>4.9 / 5</p>
+        </div>
+
+        <div class="rating-card">
+            <img src="goodfirms.png" alt="GoodFirms">
+            <h4>GoodFirms</h4>
+            <div class="stars">★★★★★</div>
+            <p>4.5 / 5</p>
+        </div>
+
+        <div class="rating-card">
+            <img src="google.png" alt="Google">
+            <h4>Google</h4>
+            <div class="stars">★★★★★</div>
+            <p>4.6 / 5</p>
+        </div>
+
+    </div>
+</section>
+<section class="client-love">
+    <h2>The love from our clients is the reason for our Success..</h2>
+
+    <div class="testimonial-wrapper">
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+                A very supportive and customer centric team. Fantastic company to
+                partner with. Had a wonderful experience with them.
+            </p>
+            <h4>– Ramesh Rathi</h4>
+            <span>GM, CipherCloud</span>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+                Highly motivated team with customer first approach. We are happy
+                with their deliverables and strongly recommend the company if you
+                are looking for quality and a dedicated team.
+            </p>
+            <h4>– Ashok Boddeda</h4>
+            <span>Director, Sysgain INC</span>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>
+                Dynamic team with clear vision and energy. Awesome response and
+                quick action team. Would like to have you associated with us and
+                wish you all a great future.
+            </p>
+            <h4>– Pradeep Reddy</h4>
+            <span>Senior Manager, Accenture</span>
+        </div>
+
+    </div>
+</section>
+<section class="our-clients">
+    <div class="section-title">
+        <h2>Our Clients</h2>
+        <p>Brands across Globe Trust Us</p>
+    </div>
+
+    <div class="clients-grid">
+        <img src="govt-of-india.png" alt="Government of India">
+        <img src="idbi.png" alt="National Health Mission">
+        <img src="swaas.png" alt="IDBI Trustee">
+        <img src="nhm.png" alt="Farm to Fork">
+        <img src="euroart.png" alt="Centro">
+
+        <img src="geca.png" alt="GECA">
+        <img src="chocholate.png" alt="CipherCloud">
+        <img src="noxton.png" alt="Partha Dental">
+        <img src="rscc.png" alt="CII">
+        <img src="3rdflix.jpg" alt="The Chocolate Room">
+
+        <img src="intelligrow.png" alt="Star Homeopathy">
+        <img src="luxury.jpg" alt="Meena Bazar">
+        <img src="monarchergo.png" alt="Solitaire Fitness">
+        <img src="quizzar.jpg" alt="Ramky Estates">
+        <img src="rabodis.png" alt="Bonfire Institute of Design">
+    </div>
+</section>
+
+
+
+
+    <div class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button>Send Message</button>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="footer-container">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+            <h2>Miraki <span>Technologies</span></h2>
+            <p>
+                Driving Innovation, Redefining Possibilities, Powering Success!
+            </p>
+            <p class="footer-email">✉ growbusiness@mirakitech.com</p>
+
+            <div class="social-icons">
+                <a href="#">f</a>
+                <a href="#">in</a>
+                <a href="#">▶</a>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Blogs</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Buzz</a>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-links">
+            <h4>Services</h4>
+            <a href="#">AI & ML</a>
+            <a href="#">Enterprise Digital Resilience</a>
+            <a href="#">Product Engineering</a>
+            <a href="#">Workload Automation</a>
+            <a href="#">SAP Services</a>
+            <a href="#">Cloud</a>
+        </div>
+
+        <!-- Locations -->
+        <div class="footer-contact">
+            <h4>Contact</h4>
+
+            <p><strong>Canada</strong><br>+1 (437) 684-8686</p>
+            <p><strong>India</strong><br>+91 91549 04675</p>
+            <p><strong>UAE</strong><br>+971 585-868-611</p>
+            <p><strong>USA</strong><br>+1 307 285 8699</p>
+        </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <p>© 2025 Miraki Tech</p>
+        <p>
+            <a href="#">Terms & Conditions</a> |
+            <a href="#">Privacy Policy</a>
+        </p>
+    </div>
+</footer>
+
+
+</body>
+</html>
